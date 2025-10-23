@@ -3,7 +3,7 @@
 用一维列表
 然后进一步优化
 
-2025/8/26 - 2025/9/5
+2025/8/26 - 2025/10/24
 """
 
 class Slither_link():
@@ -1065,7 +1065,7 @@ class Slither_link():
                         loop[y+n+1] = 0
                     if loop[y+2*n] == None:
                         loop[y+2*n] = 0
-       for y in range(3, n-3, 2):  #(m-n,3)-(m-n,n-4)
+        for y in range(3, n-3, 2):  #(m-n,3)-(m-n,n-4)
             if loop[y+m-n] == 1:
                 if loop[y+m-2] == 0:
                     if loop[y+m-n-1] == None:
