@@ -1733,12 +1733,12 @@ class Slither_link():
     
     def recurse_solve2(self, loop):
         """回溯解题，检查题目是否具有唯一解，盘面较大的谜题建议先用其他技巧以免递归次数过多，若多解，为了防止打印用时过长，最多只打印前3个解"""
-        self._zeros(loop)  # 先用一些技巧减少递归次数
-        self._corner3(loop)
-        self._corner1(loop)
-        self._adjacent3s(loop)
-        self._diagonal_3s(loop)
-        self._extended_diagonal_3s(loop)
+        self.zeros(loop)  # 先用一些技巧减少递归次数
+        self.corner3(loop)
+        self.corner1(loop)
+        self.adjacent3s(loop)
+        self.diagonal_3s(loop)
+        self.extended_diagonal_3s(loop)
         def recurse(loop, solution_count, recursion_count, solutions):
             """回溯，每调用一次recursion_count加1"""
             recursion_count += 1
