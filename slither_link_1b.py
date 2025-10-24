@@ -1713,6 +1713,7 @@ class Slither_link():
                             elif self.check_solution(new_loop):
                                 solution_count += 1
                                 solutions.append(copy.deepcopy(new_loop))
+                                new_loop[x][y] = 0  # 注意假设这里连线找到一个解之后还要讨论如果没有线有没有解，否则可能会漏掉一些解。
                             else:
                                 solution_count, recursion_count, solutions = recurse(new_loop, solution_count, recursion_count, solutions)
                                 new_loop[x][y] = 0

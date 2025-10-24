@@ -2,7 +2,7 @@
 简陋数回解题器
 一维列表能提速吗？
 
-2025/8/26 - 2025/8/27
+2025/8/26 - 2025/10/24
 """
 puzzle = "...330.3...."
 size = (4,3)
@@ -573,6 +573,7 @@ class Slither_link():
                             elif self.check_solution(new_loop):
                                 solution_count += 1
                                 solutions.append(new_loop.copy())
+                                new_loop[x+y] = 0  # 注意假设这里连线找到一个解之后还要讨论如果没有线有没有解，否则可能会漏掉一些解。
                             else:
                                 solution_count, recursion_count, solutions = recurse(new_loop, solution_count, recursion_count, solutions)
                                 new_loop[x+y] = 0
