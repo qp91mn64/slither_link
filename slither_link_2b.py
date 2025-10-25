@@ -3,7 +3,7 @@
 用一维列表
 然后进一步优化
 
-2025/8/26 - 2025/10/24
+2025/8/26 - 2025/10/26
 """
 
 class Slither_link():
@@ -1876,7 +1876,7 @@ class Slither_link():
                 loop = new_loop.copy()
         return loop
     def solve(self):
-        loop = self._solve(self.loop)
+        self.loop = self._solve(self.loop)
         self.print_loop(self.loop)
 
 puzzle = "...330.3...."
