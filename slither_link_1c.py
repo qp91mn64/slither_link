@@ -1949,11 +1949,16 @@ class Slither_link():
                                     """
                                     return loop
                                 if newloop2 == newloop:
-                                    break
+                                    if depth >= 2 and max_depth >= 2:
+                                        newloop2 = self.trial_and_error(newloop, numbers=numbers, max_depth=max_depth-1, deep=deep)
+                                        if newloop2 == newloop:
+                                            break
+                                        else:
+                                            newloop = copy.deepcopy(newloop2)
+                                    else:
+                                        break
                                 else:
                                     newloop = copy.deepcopy(newloop2)
-                            if depth >= 2 and max_depth >= 2:
-                                loop = self.trial_and_error(newloop, numbers=numbers, max_depth=max_depth-1, deep=deep)
                             new_loop[x][y] = None  # 如果没有找到，放弃这个假设，再找下一个
             depth += 1
         if loop == new_loop:

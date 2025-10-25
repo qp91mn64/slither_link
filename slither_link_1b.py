@@ -1837,12 +1837,12 @@ class Slither_link():
                                     slither_link.print_loop(loop)
                                     return loop
                                 if newloop2 == newloop:
-                                    if depth >= 1 and max_depth >= 2:
-                                        newloop3 = self.trial_and_error(newloop2, numbers=numbers, max_depth=max_depth-1, deep=deep)
-                                        if newloop3 == newloop:
+                                    if depth >= 2 and max_depth >= 2:
+                                        newloop2 = self.trial_and_error(newloop, numbers=numbers, max_depth=max_depth-1, deep=deep)
+                                        if newloop2 == newloop:
                                             break
                                         else:
-                                            newloop = newloop3
+                                            newloop = newloop2
                                     else:
                                         break
                                 else:
